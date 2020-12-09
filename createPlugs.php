@@ -44,9 +44,10 @@ Class CreatePlugs
         echo "Your Plug Path : ".self::$baseDir;
     }
 
-
     /**
      * 生成目录结构
+     * @return bool
+     * @throws Exception
      */
     static public function createDir()
     {
@@ -96,6 +97,13 @@ Class CreatePlugs
         return true;
     }
 
+    /**
+     * 写入
+     * @param $file
+     * @param $key
+     * @return bool
+     * @throws Exception
+     */
     static protected function writeFile($file, $key)
     {
         $str = '';
@@ -104,7 +112,7 @@ Class CreatePlugs
                 $str = "{".PHP_EOL;
                 $str .= "    \"name\":\"\"," .PHP_EOL;
                 $str .= "    \"type\":\"library\"," .PHP_EOL;
-                $str .= "    \"description\":\"EasySwoole Panel's xxx\"," .PHP_EOL;
+                $str .= "    \"description\":\"EasySwoole Panel's Plugs\"," .PHP_EOL;
                 $str .= "    \"keywords\":" . '[' . "\"easyswoole panel\", \"easyswoole plugs\"]," .PHP_EOL;
                 $str .= "    \"homepage\":\"\",".PHP_EOL;
                 $str .= "    \"license\":\"Apache-2.0\"," .PHP_EOL;
@@ -131,18 +139,16 @@ Class CreatePlugs
             case 'install':
                 $str = "<?php".PHP_EOL;
                 $str .= "/**
- * xxxx插件
- * xxxxPlugs
- * 1.0安装脚本
- * User: 
+ * Your Plug Name
+ * Description
+ * version 1.0
+ * Author: 
  * Date: 
- * Time: 
  */
 
-// 创建表结构
-// 更改表结构
-// 添加数据
-// 移动view文件 都可以".PHP_EOL."\EasySwoole\Utility\File::createFile(EASYSWOOLE_ROOT.\"/public/nepadmin/views/xxxxPlugs/index.html\", \"自动安装\");";
+// 可以做的事....
+// 创建表结构,更改表结构,添加数据 等等用于安装时的插件初始化必要内容
+";
                 break;
         }
         if(file_put_contents($file,$str) === false){
