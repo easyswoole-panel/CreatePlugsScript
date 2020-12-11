@@ -84,16 +84,11 @@ Class CreatePlugs
         foreach (self::$fileTree as $key => $v){
             $file = self::$baseDir.'/'.$v;
             if (!file_exists($file)){
-
-                $touch = touch($file);
-
-                if($touch){
-                    self::writeFile($file,$key);
-                }else{
-                    unlink(self::$baseDir.'/'.$v);
-                    throw new \Exception(self::$baseDir.'/'. $v .' File touch error');
-                }
-
+                    //创建并写入
+                    $createFile = self::writeFile($file,$key);
+                    if(!$createFile) {
+                        throw new \Exception($file. ' File touch error');
+                    }
             }
         }
         return true;
