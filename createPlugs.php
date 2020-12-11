@@ -37,13 +37,15 @@ Class CreatePlugs
         self::$baseDir = __DIR__.'/'.self::$plugName.ROOT_SUFFIX;
         if (self::createDir()){
             echo('create directories successful');
-            echo "\r\n";
+            echo PHP_EOL;
         }
         if(self::createFile()){
             echo('create file successful');
-            echo "\r\n";
+            echo PHP_EOL;
         }
         echo "Your Plug Path : ".self::$baseDir;
+        echo PHP_EOL;
+
     }
 
     /**
