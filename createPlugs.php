@@ -19,10 +19,12 @@ Class CreatePlugs
     ];
     //文件
     static private $fileTree = [
-      'composer'            => 'composer.json',
-      'esPlugsConfig'       => 'esPlugsConfig.php',
-      'PlugsInitialization' => 'src/PlugsInitialization.php',
-      'install'             => 'src/database/install_1.0.php',
+        'composer'            => 'composer.json',
+        'esPlugsConfig'       => 'esPlugsConfig.php',
+        'PlugsInitialization' => 'src/PlugsInitialization.php',
+        'install'             => 'src/database/install_1.0.php',
+        'gitignore'           => 'src/view/.gitignore'
+
     ];
     //插件名
     static private $plugName;
@@ -149,6 +151,9 @@ Class CreatePlugs
 // 可以做的事....
 // 创建表结构,更改表结构,添加数据 等等用于安装时的插件初始化必要内容
 ";
+                break;
+            case 'gitignore':
+                $str = "*";
                 break;
         }
         if(file_put_contents($file,$str) === false){
