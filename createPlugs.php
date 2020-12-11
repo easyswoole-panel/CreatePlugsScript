@@ -127,6 +127,7 @@ Class CreatePlugs
                 $str .= " 'namespace'=>'xxx\\\Plugs\\\',".PHP_EOL;
                 $str .= " 'version'=>'1.0',//当前插件版本号,".PHP_EOL;
                 $str .= " 'logo'=>'插件图标 可访问url'".PHP_EOL;
+                $str .= " 'home_view' => '插件主页地址，可以是配置项编辑页面 或者外部页面等等',".PHP_EOL;
                 $str .= "];";
                 break;
             case 'PlugsInitialization':
