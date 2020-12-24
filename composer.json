@@ -1,0 +1,22 @@
+{
+    "name": "chrisplugs/create-script",
+    "type": "library",
+    "description": "EasySwoole Panel's create plugs script",
+    "keywords": [
+        "easyswoole panel",
+        "easyswoole panel create plugs script"
+    ],
+    "homepage": "https://github.com/easyswoole-panel/CreatePlugsScript",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Chris",
+            "email": "386273094@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Chrisplugs\\CreatePlugsScript\\" : "src/"
+        }
+    }
+}
