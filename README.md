@@ -8,6 +8,7 @@ https://www.kancloud.cn/xuanyanwow/easyswoole-panel-plugs/2062692
 
 使用说明
 composer require chrisplugs/create-script
+
 在项目根目录中：
 php easyswoole create_plugs a/b
 
