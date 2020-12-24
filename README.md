@@ -6,6 +6,9 @@ https://www.kancloud.cn/xuanyanwow/easyswoole-panel-plugs/2062692
 
 脚本说明：该脚本会在脚本当前所在的目录创建一个初始化的插件开发项目。
 
-使用说明，在项目根目录中：
+使用说明
+composer require chrisplugs/create-script
+
+在项目根目录中：
 php easyswoole create_plugs a/b
 
