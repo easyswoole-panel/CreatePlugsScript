@@ -1,5 +1,5 @@
 <?php
-namespace App\Command;
+namespace Chrisplugs\CreatePlugsScript;
 
 use EasySwoole\Command\AbstractInterface\CommandHelpInterface;
 use EasySwoole\Command\CommandManager;

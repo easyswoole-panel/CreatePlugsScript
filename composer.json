@@ -16,7 +16,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Chrisplugs\\CreatePlugsScript\\" : "src/"
+            "Chrisplugs\\CreatePlugsScript\\" : "Command/"
         }
     }
 }
