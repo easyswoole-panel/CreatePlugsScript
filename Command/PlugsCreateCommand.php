@@ -33,7 +33,7 @@ class PlugsCreateCommand implements CommandInterface
 
         list ($packName, $plugsName) = explode("/", $plugsName);
         if(preg_match('/^[A-Z]+$/', $packName) || preg_match('/^[A-Z]+$/', $plugsName)){
-            return '错误，包名和插件名必须使用大驼峰';
+            return '错误，包名和插件名必须使用大驼峰。';
 
         }
 
