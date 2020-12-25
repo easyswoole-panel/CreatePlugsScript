@@ -8,7 +8,7 @@ use EasySwoole\Utility\File;
 
 class PlugsCreateCommand implements CommandInterface
 {
-
+    private $ROOT_SUFFIX = 'Plugs';
 
     public function commandName(): string
     {
@@ -24,14 +24,20 @@ class PlugsCreateCommand implements CommandInterface
         if(!$plugName){
             throw new \Exception('The plug-in name is not set');
         }
-
+        //规定使用者无须添加插件后缀，程序会加上。
+        $plugsName .= $this->ROOT_SUFFIX;
         //判断格式
         if (false === strstr($plugsName, "/")){
             return '错误，格式需要 a/b';
         }
 
         list ($packName, $plugsName) = explode("/", $plugsName);
-        // 放到Addons中
+        if(preg_match('/^[A-Z]+$/', $packName) || preg_match('/^[A-Z]+$/', $plugsName)){
+            return '错误，包名和插件名必须使用大驼峰';
+
+        }
+
+            // 放到Addons中
         if(EASYSWOOLE_ROOT){
             $path = EASYSWOOLE_ROOT."/Addons/{$packName}/$plugsName";
         }else{
