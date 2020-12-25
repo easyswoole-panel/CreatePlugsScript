@@ -8,7 +8,7 @@ use EasySwoole\Utility\File;
 
 class PlugsCreateCommand implements CommandInterface
 {
-    private $ROOT_SUFFIX = 'Plugs';
+
 
     public function commandName(): string
     {
@@ -24,8 +24,7 @@ class PlugsCreateCommand implements CommandInterface
         if(!$plugName){
             throw new \Exception('The plug-in name is not set');
         }
-        //规定使用者无须添加插件后缀，程序会加上。
-        $plugsName .= $this->ROOT_SUFFIX;
+
         //判断格式
         if (false === strstr($plugsName, "/")){
             return '错误，格式需要 a/b';
