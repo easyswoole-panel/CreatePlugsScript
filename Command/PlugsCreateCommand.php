@@ -32,12 +32,14 @@ class PlugsCreateCommand implements CommandInterface
         }
 
         list ($packName, $plugsName) = explode("/", $plugsName);
-        if(!preg_match('/^[A-Z]+$/', $packName) || !preg_match('/^[A-Z]+$/', $plugsName)){
+        // 第一个字符必须是大写的，中间不能用_
+        if(!preg_match('/^[A-Z]+$/', $packName[0]) || !preg_match('/^[A-Z]+$/', $plugsName[0])
+            || strpos("_", $packName) !== false || strpos("_", $plugName)
+        ){
             return '错误，包名和插件名必须使用大驼峰。';
-
         }
 
-            // 放到Addons中
+        // 放到Addons中
         if(EASYSWOOLE_ROOT){
             $path = EASYSWOOLE_ROOT."/Addons/{$packName}/$plugsName";
         }else{
